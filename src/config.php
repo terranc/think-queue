@@ -10,5 +10,29 @@
 // +----------------------------------------------------------------------
 
 return [
-    'connector' => 'Sync'
+    'connector' => 'sync',
+
+    'sync' => [
+        'driver' => 'sync',
+    ],
+
+    'database' => [
+        'driver' => 'database',
+        'expire' => 60,
+        'default' => 'default',
+        'table' => 'jobs',
+        'dsn' => []
+    ],
+
+    'redis' => [
+        'driver' => 'redis',
+        'expire' => 60,
+        'default' => 'default',
+        'host' => '127.0.0.1',
+        'port' => 6379,
+        'password' => '',
+        'select' => 0,
+        'timeout' => 0,
+        'persistent' => false
+    ],
 ];

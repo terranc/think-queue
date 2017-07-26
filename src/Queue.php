@@ -31,7 +31,8 @@ class Queue
     private static function buildConnector()
     {
         $options = Config::get('queue');
-        $type    = !empty($options['connector']) ? $options['connector'] : 'Sync';
+        $type    = !empty($options['connector']) ? $options['connector'] : 'sync';
+        $options = $options[$type];
 
         if (!isset(self::$connector)) {
 
